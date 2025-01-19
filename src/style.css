@@ -1,0 +1,33 @@
+body {
+    background-image: url("https://t4.ftcdn.net/jpg/02/48/91/17/360_F_248911744_iqWtp97fYUnUBHSJsDqtdXziBSjRLf7t.jpg");
+    background-size: 100%;
+    overflow-x: hidden;
+    padding-left: 10px;
+}
+
+h1 {
+    color: white;
+    font-size: 45px;
+    font-weight: 800;
+    font-family: "Roboto", sans-serif;
+}
+
+h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    color: white;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    width: calc(100% - 720px)
+}
+
+video, canvas{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
