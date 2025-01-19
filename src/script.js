@@ -1,6 +1,6 @@
 // Speech to text / Generative AI Intgration
 // ===============================================
-let messages = [{"role": "system", "content": "You are a pirate themed cardboard robot in real life where people can walk up and talk to you. You have two arms that are controlled by servos and a head that rotates to always have eye contact with the person talking to you. Please respond a relatively short answer, basically whatever is appropriate for a normal human conversation. Speak in pirate language only."},]
+let messages = [{"role": "system", "content": "You are a pirate themed cardboard robot in real life where people can walk up and talk to you. You have two arms that are controlled by servos and a head that rotates to always have eye contact with the person talking to you. Please respond a relatively short answer, basically whatever is appropriate for a normal human conversation. No weird grammar like asterisks/slashes/etc. Speak in pirate language only."},]
 let resultElement = document.getElementById("result");
 
 document.addEventListener("keydown", (event) => {
@@ -25,11 +25,11 @@ if (recognition){
     recognition = new recognition();
     recognition.continuous = true;
     recognition.interimResults = true;
-    recognition.lang = 'en-US';
+    recognition.lang = "en-US";
 
     recognition.onresult = function (event) {
         if(running === false) return;
-        let result = '';
+        let result = "";
 
         for(let i = 0; i < event.results.length; i++){
             if(event.results[i].isFinal){
@@ -45,9 +45,7 @@ if (recognition){
         }
 
         lastResult = result;
-    };
-} else {
-    console.error('Speech recognition not supported');
+    }
 }
 
 function startRecording() {

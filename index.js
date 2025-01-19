@@ -5,7 +5,6 @@ const cors = require("cors");
 
 const gtts = require("node-gtts")("en");
 
-// app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -46,24 +45,13 @@ app.listen("3000", () => {
 
 // Arduino Communication
 const SerialPort = require('serialport');
-// const Readline = require('@serialport/parser-readline');
 const port = new SerialPort.SerialPort({ path: 'COM4', baudRate: 9600 });
-// const parser = port.pipe(new Readline({ delimiter: '\n' }));
-// Read the port data
 port.on("open", () => {
   console.log('serial port open');
 });
-// parser.on('data', data =>{
-//   console.log('got word from arduino:', data);
-// });
 
 let lastMessage = null;
 let lastMessageSent = null;
-// async function writeToArduino(message){
-//     writing = true;
-//     console.log("writing")
-    
-// }
 
 setInterval(() => {
     if(lastMessage !== null && lastMessage !== lastMessageSent){
